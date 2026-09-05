@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+header,
+footer {
+    background: #8b4513;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+}
+
+.logo {
+    color: #daa520;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: #daa520;
+}
+
+.signin-btn,
+.register-btn,
+.view-btn {
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.signin-btn,
+.btn-primary,
+.view-btn {
+    background: #053352;
+    color: #ebc0a1 !important;
+}
+
+.register-btn,
+.btn-primary,
+.view-btn {
+    background: #413006;
+    color: #e3dcdc !important;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 20px;
+}
+
+.page-title {
+    color: #8b4513;
+    text-align: center;
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 25px auto;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.menu-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px #0002;
+}
+
+.menu-card:hover {
+    transform: translateY(-3px);
+}
+
+.menu-image {
+    width: 100%;
+    height: 170px;
+    background: #ddd;
+}
+
+.menu-card h3,
+.menu-card p,
+.menu-card .price {
+    margin: 12px 15px 0;
+}
+
+.menu-card h3 {
+    color: #8b4513;
+}
+
+.menu-card p {
+    flex-grow: 1;
+    color: #666;
+}
+
+.price {
+    color: #daa520;
+    font-weight: bold;
+}
+
+.view-btn {
+    margin: 15px;
+    text-align: center;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 30px 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: #daa520;
+}
+
+.footer-section ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .menu-items,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}

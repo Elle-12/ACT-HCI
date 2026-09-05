@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resto Bistro - Book a Table</title>
+    <link rel="stylesheet" href="styles/book.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">RESTO</div>
+            <ul class="nav-links">
+                <li><a href="index.html" >HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="book.html" class="active">BOOK</a></li>
+                <li><a href="schedule.html">SCHEDULE</a></li>
+                <li><a href="transaction.html">TRANSACTION</a></li>
+                <li><a href="login.html" class="signin-btn">Sign in</a></li>
+                <li><a href="register.html" class="register-btn">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">Book a Table</h1>
+        <p class="subtitle">Select your preferred date, time, and party size for your dining experience.</p>
+
+        <form action="payment.html" method="POST" class="booking-form">
+            <div class="form-group">
+                <label>Select a date:</label>
+                <input type="date" name="reservation_date" required>
+            </div>
+
+            <div class="form-group">
+                <label>Available Time</label>
+                <div class="time-slots">
+                    <label class="time-slot"><input type="radio" name="time" value="11:30 AM"> 11:30 AM</label>
+                    <label class="time-slot"><input type="radio" name="time" value="12:00 PM"> 12:00 PM</label>
+                    <label class="time-slot"><input type="radio" name="time" value="1:00 PM"> 1:00 PM</label>
+                    <label class="time-slot"><input type="radio" name="time" value="2:00 PM"> 2:00 PM</label>
+                    <label class="time-slot"><input type="radio" name="time" value="7:00 PM"> 7:00 PM</label>
+                    <label class="time-slot"><input type="radio" name="time" value="8:00 PM"> 8:00 PM</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Party Size:</label>
+                <select name="party_size" required>
+                    <option value="">Select party size</option>
+                    <option value="1">1 person</option>
+                    <option value="2">2 people</option>
+                    <option value="3">3 people</option>
+                    <option value="4">4 people</option>
+                    <option value="5">5 people</option>
+                    <option value="6">6 people</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Choose Your Orders:</label>
+                <div class="order-options">
+                    <label class="order-option">
+                        <input type="checkbox" name="orders[]" value="item-1">
+                        <span class="order-option-content">
+                            <strong>Item name</strong>
+                            <span>Item description</span>
+                            <b>₱0.00</b>
+                        </span>
+                    </label>
+                    <label class="order-option">
+                        <input type="checkbox" name="orders[]" value="item-2">
+                        <span class="order-option-content">
+                            <strong>Item name</strong>
+                            <span>Item description</span>
+                            <b>₱0.00</b>
+                        </span>
+                    </label>
+                    <label class="order-option">
+                        <input type="checkbox" name="orders[]" value="item-3">
+                        <span class="order-option-content">
+                            <strong>Item name</strong>
+                            <span>Item description</span>
+                            <b>₱0.00</b>
+                        </span>
+                    </label>
+                    <label class="order-option">
+                        <input type="checkbox" name="orders[]" value="item-4">
+                        <span class="order-option-content">
+                            <strong>Item name</strong>
+                            <span>Item description</span>
+                            <b>₱0.00</b>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Special Requests (Optional)</label>
+                <textarea name="special_requests" placeholder="Type any special requests..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">CONTINUE SELECTION</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>RESTO</h3>
+                <p>An elegant culinary escape delivering authentic bistro specialties.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Menu Highlights</h4>
+                <ul>
+                    <li>Bistro Ribeye</li>
+                    <li>Med Barolo</li>
+                    <li>Pan-Seared Duck</li>
+                    <li>Truffle Pesto</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Experiences</h4>
+                <ul>
+                    <li>Chef's Table</li>
+                    <li>Private Event Catering</li>
+                    <li>Wine Pairings</li>
+                    <li>Weekend Brunch</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li>Help Center</li>
+                    <li>Reservation Policies</li>
+                    <li>Contact Resto</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Resto Bistro. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
