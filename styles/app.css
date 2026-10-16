@@ -1,0 +1,415 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: #332a24;
+    background: #fffdf9;
+    font-family: Arial, sans-serif;
+    line-height: 1.55;
+}
+
+a {
+    color: #75421f;
+}
+
+.site-header {
+    background: #432b1f;
+    color: #fff;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: 1240px;
+    margin: auto;
+    padding: 16px 24px;
+}
+
+.logo {
+    color: #e8b84a;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a,
+.nav-button {
+    color: #fff;
+    font: inherit;
+    text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #e8b84a;
+}
+
+.nav-links .nav-register {
+    padding: 8px 13px;
+    border-radius: 4px;
+    background: #a75d32;
+}
+
+.nav-welcome {
+    color: #f5dfbd;
+}
+
+.logout-form {
+    margin: 0;
+}
+
+.nav-button {
+    padding: 7px 11px;
+    border: 1px solid #cfb69c;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.site-footer {
+    margin-top: 50px;
+    padding: 34px 24px 16px;
+    color: #f8f2eb;
+    background: #432b1f;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-inner h2,
+.footer-inner h3 {
+    color: #e8b84a;
+}
+
+.footer-inner a {
+    display: block;
+    margin: 5px 0;
+    color: #f8f2eb;
+}
+
+.copyright {
+    margin: 24px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid #ffffff30;
+    text-align: center;
+}
+
+.page-wrap {
+    width: min(100% - 32px, 1100px);
+    min-height: 48vh;
+    margin: 36px auto;
+}
+
+.page-heading {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.page-heading h1 {
+    margin-bottom: 5px;
+    color: #75421f;
+}
+
+.account-deleted-notice {
+    width: min(100% - 32px, 1100px);
+    margin: 20px auto;
+}
+
+.card,
+.form-card {
+    padding: 24px;
+    border: 1px solid #eadfd3;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 5px 18px #432b1f12;
+}
+
+.form-card {
+    width: min(100%, 520px);
+    margin: 36px auto;
+}
+
+.form-card h1 {
+    margin-top: 0;
+    color: #75421f;
+}
+
+.form-field {
+    display: grid;
+    gap: 6px;
+    margin: 16px 0;
+}
+
+.form-field label {
+    font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea,
+.search-input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cfc2b5;
+    border-radius: 4px;
+    background: #fff;
+    color: #332a24;
+    font: inherit;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus,
+.search-input:focus {
+    border-color: #a75d32;
+    outline: 2px solid #a75d3233;
+}
+
+.button,
+button.button {
+    display: inline-block;
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    background: #75421f;
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover,
+button.button:hover {
+    background: #432b1f;
+}
+
+.form-card .button {
+    width: 100%;
+}
+
+.form-note {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.alert {
+    margin: 16px 0;
+    padding: 12px 14px;
+    border-radius: 4px;
+}
+
+.alert-error {
+    color: #7b1e1e;
+    background: #fdeaea;
+}
+
+.alert-success {
+    color: #245b36;
+    background: #e8f5eb;
+}
+
+.empty-state {
+    padding: 32px;
+    border: 1px dashed #cfc2b5;
+    border-radius: 8px;
+    background: #fff;
+    text-align: center;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid #eadfd3;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: 13px 15px;
+    border-bottom: 1px solid #eee5dc;
+    text-align: left;
+    vertical-align: top;
+}
+
+.data-table th {
+    color: #432b1f;
+    background: #f7f0e9;
+}
+
+.data-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.status {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 20px;
+    color: #62481a;
+    background: #fff1c9;
+    font-size: 14px;
+}
+
+.message-page {
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.message-card {
+    width: min(100%, 560px);
+    padding: 30px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 5px 24px #0002;
+}
+
+.message-card h1 {
+    color: #75421f;
+}
+
+.profile-card {
+    max-width: 700px;
+}
+
+.danger-zone {
+    max-width: 700px;
+    margin: 24px auto;
+    border-color: #e7b8b8;
+}
+
+.danger-zone h2 {
+    margin-top: 0;
+    color: #8a2727;
+}
+
+.button-danger {
+    color: #fff;
+    background: #a52d2d;
+}
+
+.button-danger:hover {
+    background: #761d1d;
+}
+
+.button-muted {
+    color: #43372e;
+    background: #e8dfd6;
+}
+
+.button-muted:hover {
+    color: #fff;
+}
+
+.button-small {
+    padding: 7px 10px;
+    font-size: 14px;
+}
+
+.action-buttons,
+.row-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.row-actions form {
+    margin: 0;
+}
+
+.schedule-edit-form {
+    margin: 0 auto 24px;
+}
+
+.form-field fieldset,
+fieldset.form-field {
+    min-width: 0;
+    padding: 0;
+    border: 0;
+}
+
+.form-field legend {
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.order-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+}
+
+.order-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #eadfd3;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.order-option input[type="checkbox"] {
+    width: auto;
+    margin-top: 5px;
+}
+
+.order-option > span {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.order-option > span > span {
+    color: #62564b;
+    font-size: 14px;
+}
+
+.order-option b {
+    color: #75421f;
+}
+
+@media (max-width: 760px) {
+    .site-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}

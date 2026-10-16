@@ -214,3 +214,57 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+.booking-form {
+    max-width: 760px;
+    border: 1px solid #eadfd3;
+    border-radius: 8px;
+    border-left: 4px solid #8b4513;
+    box-shadow: 0 5px 18px #432b1f12;
+}
+
+.booking-form fieldset {
+    min-width: 0;
+    border: 0;
+    padding: 0;
+}
+
+.booking-form legend {
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.time-slots,
+.order-options {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.order-option {
+    align-items: flex-start;
+    border-radius: 4px;
+}
+
+.order-option input {
+    width: auto;
+    margin-top: 5px;
+}
+
+.order-option > span {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.order-option > span > span {
+    color: #666;
+    font-size: 14px;
+}
+
+.order-option b {
+    color: #8b4513;
+}
+
+.booking-note {
+    color: #62564b;
+    font-size: 14px;
+}

@@ -178,3 +178,62 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+.menu-items {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.menu-card {
+    overflow: hidden;
+    border-radius: 7px;
+}
+
+.menu-image {
+    display: block;
+    object-fit: cover;
+}
+
+.menu-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 0 15px 16px;
+}
+
+.menu-card-content h2 {
+    margin: 12px 0 0;
+    color: #8b4513;
+    font-size: 21px;
+}
+
+.menu-card-content p {
+    margin: 8px 0 16px;
+}
+
+.menu-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.menu-card-bottom .button {
+    padding: 8px 11px;
+    font-size: 14px;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
