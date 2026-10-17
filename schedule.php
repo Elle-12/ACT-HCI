@@ -231,8 +231,6 @@ require __DIR__ . '/includes/header.php';
             <p>Book a table and it will appear here.</p>
             <a class="button" href="book.php">Book a table</a>
         </div>
-    <?php elseif ((int) $reservation['has_transaction'] !== 0): ?>
-        <span>Payment record exists</span>
     <?php else: ?>
         <div class="table-wrap">
             <table class="data-table">
@@ -256,6 +254,8 @@ require __DIR__ . '/includes/header.php';
                                         <input type="hidden" name="return_to" value="schedule.php">
                                         <button class="button button-danger button-small" type="submit">Delete</button>
                                     </form>
+                                <?php elseif ((int) $reservation['has_transaction'] !== 0): ?>
+                                    <span>Payment record exists</span>
                                 <?php else: ?>
                                     <span>—</span>
                                 <?php endif; ?>
