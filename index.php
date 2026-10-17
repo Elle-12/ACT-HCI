@@ -18,7 +18,7 @@ $dishes = menu_items();
             <h1>Welcome to Resto</h1>
             <p class="hero-copy">An elegant culinary escape delivering stellar bistro-inspired dining and seamless reservations for discerning food lovers.</p>
             <div class="hero-buttons">
-                <a href="menu.php" class="button">Explore the menu</a>
+                <a href="#favorites" class="button">See house favorites</a>
                 <a href="book.php" class="button button-light">Book a table</a>
             </div>
         </div>
@@ -29,10 +29,9 @@ $dishes = menu_items();
         <div class="home-actions">
             <a href="book.php">Reserve a table</a>
             <a href="schedule.php">View your schedule</a>
-            <a href="transaction.php">Review reservations</a>
         </div>
     </section>
-    <section class="menu-highlights">
+    <section class="menu-highlights" id="favorites">
         <div class="section-heading">
             <p class="eyebrow">FROM OUR KITCHEN</p>
             <h2>House favorites</h2>
@@ -50,7 +49,6 @@ $dishes = menu_items();
                 </article>
             <?php endforeach; ?>
         </div>
-        <p class="menu-link"><a href="menu.php">See the full menu</a></p>
     </section>
 </main>
 <?php require __DIR__ . '/includes/footer.php'; ?>

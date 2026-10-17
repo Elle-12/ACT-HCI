@@ -52,10 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                      WHERE id = :id AND user_id = :user_id
                        AND reservation_date >= CURDATE()
                        AND status IN ("pending", "confirmed")
-                       AND NOT EXISTS (
-                           SELECT 1 FROM transactions
-                           WHERE transactions.reservation_id = reservations.id
-                       )
                      FOR UPDATE'
                 );
                 $check->execute(['id' => $reservationId, 'user_id' => $user['id']]);
@@ -120,11 +116,7 @@ if (isset($_GET['edit'])) {
             'SELECT id, reservation_date, reservation_time, party_size, special_requests
              FROM reservations
              WHERE id = :id AND user_id = :user_id AND status IN ("pending", "confirmed")
-               AND reservation_date >= CURDATE()
-               AND NOT EXISTS (
-                   SELECT 1 FROM transactions
-                   WHERE transactions.reservation_id = reservations.id
-               )'
+               AND reservation_date >= CURDATE()'
         );
         $editQuery->execute(['id' => $editId, 'user_id' => $user['id']]);
         $editing = $editQuery->fetch() ?: null;
@@ -140,8 +132,7 @@ if (isset($_GET['edit'])) {
 }
 
 $statement = $connection->prepare(
-    'SELECT id, reservation_date, reservation_time, party_size, special_requests, status,
-            EXISTS(SELECT 1 FROM transactions WHERE transactions.reservation_id = reservations.id) AS has_transaction
+    'SELECT id, reservation_date, reservation_time, party_size, special_requests, status
      FROM reservations
      WHERE user_id = :user_id
      ORDER BY reservation_date DESC, reservation_time DESC'
@@ -246,7 +237,7 @@ require __DIR__ . '/includes/header.php';
                             <td><?= $reservation['special_requests'] !== '' ? nl2br(h($reservation['special_requests'])) : '—' ?></td>
                             <td><span class="status"><?= h(ucfirst($reservation['status'])) ?></span></td>
                             <td class="row-actions">
-                                <?php if (in_array($reservation['status'], ['pending', 'confirmed'], true) && $reservation['reservation_date'] >= date('Y-m-d') && (int) $reservation['has_transaction'] === 0): ?>
+                                <?php if (in_array($reservation['status'], ['pending', 'confirmed'], true) && $reservation['reservation_date'] >= date('Y-m-d')): ?>
                                     <a class="button button-small" href="schedule.php?edit=<?= (int) $reservation['id'] ?>">Edit</a>
                                     <form method="post" action="reservation-delete.php" onsubmit="return confirm('Delete this reservation and its selected dishes?')">
                                         <input type="hidden" name="csrf_token" value="<?= h(csrf_token()) ?>">
@@ -254,8 +245,6 @@ require __DIR__ . '/includes/header.php';
                                         <input type="hidden" name="return_to" value="schedule.php">
                                         <button class="button button-danger button-small" type="submit">Delete</button>
                                     </form>
-                                <?php elseif ((int) $reservation['has_transaction'] !== 0): ?>
-                                    <span>Payment record exists</span>
                                 <?php else: ?>
                                     <span>—</span>
                                 <?php endif; ?>

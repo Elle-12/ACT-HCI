@@ -2,7 +2,7 @@
 declare(strict_types=1);
 require_once __DIR__ . '/includes/app.php';
 
-$allowedNextPages = ['index.php', 'menu.php', 'book.php', 'schedule.php', 'transaction.php', 'profile.php'];
+$allowedNextPages = ['index.php', 'book.php', 'schedule.php', 'profile.php'];
 $next = (string) ($_POST['next'] ?? $_GET['next'] ?? 'index.php');
 if (!in_array($next, $allowedNextPages, true)) {
     $next = 'index.php';

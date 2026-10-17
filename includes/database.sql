@@ -38,22 +38,6 @@ CREATE TABLE IF NOT EXISTS reservations (
         FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS transactions (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    reservation_id INT NULL,
-    user_id INT NULL,
-    transaction_number VARCHAR(50) NULL UNIQUE,
-    total_amount DECIMAL(10, 2) NOT NULL,
-    payment_status ENUM('pending', 'paid', 'failed', 'refunded', 'cancelled') NOT NULL DEFAULT 'pending',
-    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    INDEX idx_transactions_reservation (reservation_id),
-    INDEX idx_transactions_user (user_id),
-    CONSTRAINT fk_transactions_reservation
-        FOREIGN KEY (reservation_id) REFERENCES reservations(id) ON DELETE SET NULL,
-    CONSTRAINT fk_transactions_user
-        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
-) ENGINE=InnoDB;
-
 CREATE TABLE IF NOT EXISTS reservation_items (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     reservation_id INT NOT NULL,

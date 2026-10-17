@@ -6,7 +6,6 @@
         </div>
         <div>
             <h3>Explore</h3>
-            <a href="menu.php">Our menu</a>
             <a href="book.php">Make a reservation</a>
             <a href="schedule.php">Your schedule</a>
         </div>

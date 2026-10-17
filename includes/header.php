@@ -19,10 +19,8 @@ $user = current_user();
         <a class="logo" href="index.php">RESTO</a>
         <ul class="nav-links">
             <li><a href="index.php"<?= $activePage === 'home' ? ' class="active"' : '' ?>>Home</a></li>
-            <li><a href="menu.php"<?= $activePage === 'menu' ? ' class="active"' : '' ?>>Menu</a></li>
             <li><a href="book.php"<?= $activePage === 'book' ? ' class="active"' : '' ?>>Book</a></li>
             <li><a href="schedule.php"<?= $activePage === 'schedule' ? ' class="active"' : '' ?>>Schedule</a></li>
-            <li><a href="transaction.php"<?= $activePage === 'transaction' ? ' class="active"' : '' ?>>Transactions</a></li>
             <?php if ($user !== null): ?>
                 <li><a href="profile.php"<?= $activePage === 'profile' ? ' class="active"' : '' ?>>Profile</a></li>
                 <li class="nav-welcome">Hi, <?= h($user['name']) ?></li>
@@ -39,3 +37,4 @@ $user = current_user();
         </ul>
     </nav>
 </header>
+<!--  -->
